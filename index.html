@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة ذكور صويلح </title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <button class="terms-button" onclick="location.href='xt.html'">الشروط والأحكام</button>
+        <h2>استعارة كتاب </h2>
+        <input type="checkbox" id="myCheckbox">
+        <label for="myCheckbox">أوافق على الشروط والأحكام</label>
+        <br>
+        <button class="button" id="submitButton" disabled onclick="location.href='finish.html'">استعارة </button>
+    </div>
+    <script>
+        const checkbox = document.getElementById('myCheckbox');
+        const submitButton = document.getElementById('submitButton');
+
+        checkbox.addEventListener('change', function() {
+            submitButton.disabled = !this.checked;
+        });
+    </script>
+</body>
